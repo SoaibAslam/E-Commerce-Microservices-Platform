@@ -136,8 +136,8 @@ spring.log
 --------------------------------------------
 
 ### Eureka Server
-![Dashboard](screenshots/Eureka-Server/eureka_dashboard1.png)
-![Dashboard](screenshots/Eureka-Server/eureka_dashboard2.png)
+![Dashboard](screenshots/Eureka-Server/eureka-dashboard1.png)
+![Dashboard](screenshots/Eureka-Server/eureka-dashboard2.png)
 
 ### Customer Service
 ![Customer Swagger](screenshots/CustomerMS/swagger-customer.png)
