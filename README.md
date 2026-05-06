@@ -136,23 +136,23 @@ spring.log
 --------------------------------------------
 
 ### Eureka Server
-![Dashboard](screenshots/eureka-server/eureka_dashboard1.png)
-![Dashboard](screenshots/eureka-server/eureka_dashboard2.png)
+![Dashboard](screenshots/Eureka-Server/eureka_dashboard1.png)
+![Dashboard](screenshots/Eureka-Server/eureka_dashboard2.png)
 
 ### Customer Service
-![Customer Swagger](screenshots/customerms/swagger-customer.png)
+![Customer Swagger](screenshots/CustomerMS/swagger-customer.png)
 
 ### Product Service
-![Product Swagger](screenshots/productms/swagger-product.png)
+![Product Swagger](screenshots/ProductMS/swagger-product.png)
 
 ### Cart Service
-![Cart Swagger](screenshots/cartms/swagger-cart.png)
+![Cart Swagger](screenshots/CartMS/swagger-cart.png)
 
 ### Payment Service
-![Payment Swagger](screenshots/paymentms/swagger-payment.png)
+![Payment Swagger](screenshots/PaymentMS/swagger-payment.png)
 
 ### Order Service
-![Order Swagger](screenshots/orderms/swagger-order.png)
+![Order Swagger](screenshots/OrderMS/swagger-order.png)
 
 
 
