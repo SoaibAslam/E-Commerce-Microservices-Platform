@@ -1,0 +1,105 @@
+# ===============================
+# Build folders
+# ===============================
+target/
+build/
+out/
+
+# ===============================
+# Logs
+# ===============================
+*.log
+logs/
+*.out
+
+# ===============================
+# Spring Boot
+# ===============================
+*.jar
+*.war
+*.ear
+*.class
+
+# ===============================
+# Environment files
+# ===============================
+.env
+.env.*
+application-local.yml
+application-local.properties
+
+# ===============================
+# Maven
+# ===============================
+.mvn/wrapper/maven-wrapper.jar
+
+# ===============================
+# Gradle
+# ===============================
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+
+# ===============================
+# IDEs
+# ===============================
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Eclipse / STS
+.project
+.classpath
+.settings/
+.springBeans
+.sts4-cache/
+
+# VS Code
+.vscode/
+
+# ===============================
+# OS files
+# ===============================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store
+
+# ===============================
+# Temporary files
+# ===============================
+*.tmp
+*.swp
+*.swo
+*~
+
+# ===============================
+# Node (if frontend exists)
+# ===============================
+node_modules/
+dist/
+coverage/
+
+# ===============================
+# Docker (optional)
+# ===============================
+*.pid
+*.seed
+*.pid.lock
+
+# ===============================
+# Kubernetes (optional)
+# ===============================
+*.kubeconfig
+
+# ===============================
+# Misc
+# ===============================
+*.bak
+*.orig

@@ -1,0 +1,123 @@
+server:
+  port: 4000
+
+spring:
+  application:
+    name: EKARTGATEWAY
+
+  main:
+    web-application-type: reactive
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+
+            # =========================
+            # API ROUTES
+            # =========================
+
+            - id: product-service
+              uri: lb://PRODUCTMS
+              predicates:
+                - Path=/api/products/**
+              filters:
+                - StripPrefix=1
+
+            - id: customer-service
+              uri: lb://CUSTOMERMS
+              predicates:
+                - Path=/api/customers/**
+              filters:
+                - StripPrefix=1
+
+            - id: cart-service
+              uri: lb://CUSTOMERCARTMS
+              predicates:
+                - Path=/api/cart/**
+              filters:
+                - StripPrefix=1
+
+            - id: payment-service
+              uri: lb://PAYMENTMS
+              predicates:
+                - Path=/api/payment/**
+              filters:
+                - StripPrefix=1
+
+            - id: order-service
+              uri: lb://ORDERMS
+              predicates:
+                - Path=/api/orders/**
+              filters:
+                - StripPrefix=1
+
+
+            # =========================
+            # SWAGGER DOC ROUTES
+            # =========================
+
+            - id: customer-docs
+              uri: lb://CUSTOMERMS
+              predicates:
+                - Path=/customer/v3/api-docs
+              filters:
+                - RewritePath=/customer/v3/api-docs, /v3/api-docs
+
+            - id: product-docs
+              uri: lb://PRODUCTMS
+              predicates:
+                - Path=/product/v3/api-docs
+              filters:
+                - RewritePath=/product/v3/api-docs, /v3/api-docs
+
+            - id: order-docs
+              uri: lb://ORDERMS
+              predicates:
+                - Path=/order/v3/api-docs
+              filters:
+                - RewritePath=/order/v3/api-docs, /v3/api-docs
+
+            - id: payment-docs
+              uri: lb://PAYMENTMS
+              predicates:
+                - Path=/payment/v3/api-docs
+              filters:
+                - RewritePath=/payment/v3/api-docs, /v3/api-docs
+
+            - id: cart-docs
+              uri: lb://CUSTOMERCARTMS
+              predicates:
+                - Path=/cart/v3/api-docs
+              filters:
+                - RewritePath=/cart/v3/api-docs, /v3/api-docs
+
+
+# =========================
+# EUREKA CONFIG
+# =========================
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+
+# =========================
+# SWAGGER UI AGGREGATION
+# =========================
+springdoc:
+  swagger-ui:
+    urls:
+      - name: CUSTOMER SERVICE
+        url: /customer/v3/api-docs
+      - name: PRODUCT SERVICE
+        url: /product/v3/api-docs
+      - name: ORDER SERVICE
+        url: /order/v3/api-docs
+      - name: PAYMENT SERVICE
+        url: /payment/v3/api-docs
+      - name: CART SERVICE
+        url: /cart/v3/api-docs

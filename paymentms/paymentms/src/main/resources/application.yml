@@ -1,0 +1,45 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: PAYMENTMS
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/paymentdb
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Soaib@7672
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      paymentService:
+        registerHealthIndicator: true
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 3
+        minimumNumberOfCalls: 3
+        failureRateThreshold: 100
+        waitDurationInOpenState: 60s
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+  instance:
+    prefer-ip-address: true

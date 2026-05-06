@@ -1,0 +1,30 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: CUSTOMERCARTMS
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/customercartdb
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Soaib@7672
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+# ============================
+# Eureka Client Configuration
+# ============================
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+  instance:
+    prefer-ip-address: true

@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes: []   # empty routes to avoid issues
+
+eureka:
+  client:
+    enabled: false
