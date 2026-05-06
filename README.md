@@ -15,12 +15,12 @@ ________________________________________
 ⚙️ Services Overview
 Service	Description
 Customer Service	Manages customer data (registration, login, profile)
-Product Service	Handles product catalog and inventory
-Cart Service	Manages cart items for customers
-Order Service	Processes orders and maintains order status
-Payment Service	Handles payment processing
-Eureka Server	Service registry for discovery
-API Gateway	Routes all client requests to appropriate services
+Product Service	        Handles product catalog and inventory
+Cart Service	        Manages cart items for customers
+Order Service	        Processes orders and maintains order status
+Payment Service	        Handles payment processing
+Eureka Server	        Service registry for discovery
+API Gateway	        Routes all client requests to appropriate services
 ________________________________________
 🔧 Tech Stack
 •	Java 
@@ -44,10 +44,14 @@ ________________________________________
 •	Scalable and loosely coupled architecture 
 ________________________________________
 🚀 How to Run the Project
+
 1. Clone the repository
 git clone https://github.com/your-username/ekart-microservices.git
+
 cd ekart-microservices
+
 2. Start services in order
+
 Run the services in this sequence:
 1.	Eureka Server 
 2.	API Gateway 
@@ -76,13 +80,13 @@ http://localhost:4000/swagger-ui.html
 ________________________________________
 🔌 Service Ports
 Service	Port
-Eureka Server	8761
-API Gateway	8080
-Customer Service	8081
-Product Service	8082
-Cart Service	8083
-Order Service	8084
-Payment Service	8085
+Eureka Server	       8761
+API Gateway	       8080
+Customer Service       8081
+Product Service	       8082
+Cart Service	       8083
+Order Service	       8084
+Payment Service	       8085
 ________________________________________
 🧪 Testing
 •	Tested APIs using Postman 
@@ -118,9 +122,6 @@ spring.log
 # Maven
 .mvn/wrapper/maven-wrapper.jar
 
-# Gradle
-.gradle/
-build/
 
 # ===============================
 # IDE Files
@@ -131,42 +132,7 @@ build/
 .classpath
 .settings/
 
-# IntelliJ
-.idea/
-*.iml
-*.iws
-*.ipr
-out/
-
-# VS Code
-.vscode/
-
-# ===============================
-# OS Files
-# ===============================
-.DS_Store
-Thumbs.db
-
-# ===============================
-# Environment / Config
-# ===============================
-.env
-*.env
-application-local.yml
-application-dev.yml
-
-# ===============================
-# Docker (if you add later)
-# ===============================
-docker-compose.override.yml
-
-# ===============================
-# Node (if frontend later)
-# ===============================
-node_modules/
-
-# ===============================
-# Temporary Files
-# ===============================
-*.tmp
-*.swp
+# Screenshot
+--------------------------------------------
+![Eureka](screenshots/eureka-dashboard.png)
+![Swagger](screenshots/swagger.png)
