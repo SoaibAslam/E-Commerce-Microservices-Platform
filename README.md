@@ -132,7 +132,41 @@ spring.log
 .classpath
 .settings/
 
-# Screenshot
+# Screenshots
 --------------------------------------------
-![Eureka](screenshots/eureka-dashboard.png)
-![Swagger](screenshots/swagger.png)
+
+### Eureka Server
+![Dashboard](screenshots/eureka-server/eureka_dashboard1.png)
+![Dashboard](screenshots/eureka-server/eureka_dashboard2.png)
+
+### Customer Service
+![Customer Swagger](screenshots/customerms/swagger-customer.png)
+
+### Product Service
+![Product Swagger](screenshots/productms/swagger-product.png)
+
+### Cart Service
+![Cart Swagger](screenshots/cartms/swagger-cart.png)
+
+### Payment Service
+![Payment Swagger](screenshots/paymentms/swagger-payment.png)
+
+### Order Service
+![Order Swagger](screenshots/orderms/swagger-order.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
