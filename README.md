@@ -141,26 +141,39 @@ spring.log
 
 ### Customer Service
 ![Customer Swagger](screenshots/CustomerMS/swagger-customer.png)
+![Bulk Post](screenshots/CustomerMS/postman-bulkpost.png)
+![Delete by ID](screenshots/CustomerMS/postman-deletebyid.png)
+![Get All](screenshots/CustomerMS/postman-getall.png)
+![Get by ID](screenshots/CustomerMS/postman-getbyid.png)
+![Single Post](screenshots/CustomerMS/postman-singlepost.png)
+![Update by ID](screenshots/CustomerMS/postman-updatebyid.png)
 
 ### Product Service
 ![Product Swagger](screenshots/ProductMS/swagger-product.png)
+![Add Bulk Product](screenshots/ProductMS/postman-addbulkproduct.png)
+![Add Product](screenshots/ProductMS/postman-addproduct.png)
+![Show All Products](screenshots/ProductMS/postman-showallproduct.png)
+![Show Product by ID](screenshots/ProductMS/postman-showproductbyid.png)
 
 ### Cart Service
 ![Cart Swagger](screenshots/CartMS/swagger-cart.png)
+![Delete Cart Item](screenshots/CartMS/postman-deletecartitem.png)
+![Insert in Cart](screenshots/CartMS/postman-insertincart.png)
+![Item Found in Cart](screenshots/CartMS/postman-itemfoundincart.png)
+![Message](screenshots/CartMS/postman-message.png)
+![Update Item](screenshots/CartMS/postman-updateitem.png)
 
 ### Payment Service
 ![Payment Swagger](screenshots/PaymentMS/swagger-payment.png)
+![Add Card](screenshots/PaymentMS/postman-addcard.png)
+![Card Not Found](screenshots/PaymentMS/postman-cardnotfound.png)
+![Message](screenshots/PaymentMS/postman-message.png)
+![Test Cases Fail](screenshots/PaymentMS/postman-testcasesfail.png)
+![Verify Card](screenshots/PaymentMS/postman-verifycard.png)
 
 ### Order Service
 ![Order Swagger](screenshots/OrderMS/swagger-order.png)
-
-
-
-
-
-
-
-
+![Create Order and Payment](screenshots/OrderMS/postman-createorderandpayment.png)
 
 
 
