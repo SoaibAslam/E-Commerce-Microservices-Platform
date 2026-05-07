@@ -135,6 +135,9 @@ spring.log
 # Screenshots
 --------------------------------------------
 
+### Architecture Diagram
+![Architecture Diagram](screenshots/Architecture%20diagram/architecture-diagram.png)
+
 ### Eureka Server
 ![Dashboard](screenshots/Eureka-Server/eureka-dashboard1.png)
 ![Dashboard](screenshots/Eureka-Server/eureka-dashboard2.png)
