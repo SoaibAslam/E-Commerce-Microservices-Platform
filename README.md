@@ -173,6 +173,7 @@ spring.log
 ![Message](screenshots/PaymentMS/postman-message.png)
 ![Test Cases Fail](screenshots/PaymentMS/postman-testcasesfail.png)
 ![Verify Card](screenshots/PaymentMS/postman-verifycard.png)
+![Make Payment](screenshots/PaymentMS/postman-makepayment.png)
 
 ### Order Service
 ![Order Swagger](screenshots/OrderMS/swagger-order.png)
