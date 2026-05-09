@@ -169,6 +169,7 @@ spring.log
 ### Payment Service
 ![Payment Swagger](screenshots/PaymentMS/swagger-payment.png)
 ![Add Card](screenshots/PaymentMS/postman-addcard.png)
+![Get Card By CustID](screenshots/PaymentMS/postman-cardbycustomerid.png)
 ![Update Card](screenshots/PaymentMS/postman-updatecard.png)
 ![Delete Card](screenshots/PaymentMS/postman-deletecard.png)
 ![Card Not Found](screenshots/PaymentMS/postman-cardnotfound.png)
