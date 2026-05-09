@@ -169,6 +169,7 @@ spring.log
 ### Payment Service
 ![Payment Swagger](screenshots/PaymentMS/swagger-payment.png)
 ![Add Card](screenshots/PaymentMS/postman-addcard.png)
+![Update Card](screenshots/PaymentMS/postman-updatecard.png)
 ![Card Not Found](screenshots/PaymentMS/postman-cardnotfound.png)
 ![Message](screenshots/PaymentMS/postman-message.png)
 ![Test Cases Fail](screenshots/PaymentMS/postman-testcasesfail.png)
