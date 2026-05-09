@@ -178,6 +178,7 @@ spring.log
 ### Order Service
 ![Order Swagger](screenshots/OrderMS/swagger-order.png)
 ![Create Order and Payment](screenshots/OrderMS/postman-createorderandpayment.png)
+![Status Paid](screenshots/OrderMS/postman-paidstatus.png)
 
 
 
