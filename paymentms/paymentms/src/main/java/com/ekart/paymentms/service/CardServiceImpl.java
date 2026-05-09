@@ -1,6 +1,7 @@
 package com.ekart.paymentms.service;
 
 import com.ekart.paymentms.entity.Card;
+import com.ekart.paymentms.feign.CustomerClient;
 import com.ekart.paymentms.repository.CardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,9 @@ public class CardServiceImpl implements CardService {
 	@Autowired
 	private CardRepository repository;
 
+	@Autowired
+	private CustomerClient customerClient;
+
 	// ✅ HASH METHOD (ADD HERE)
 	private String hashCvv(String cvv) {
 		return Base64.getEncoder().encodeToString(cvv.getBytes());
@@ -21,8 +25,17 @@ public class CardServiceImpl implements CardService {
 
 	@Override
 	public Card saveCard(Card card) {
-		// ✅ HASH BEFORE SAVE
+
+		// ✅ Validate customer exists
+		try {
+			customerClient.getCustomer(card.getCustomerId());
+		} catch (Exception e) {
+			throw new RuntimeException("Customer not found with id: " + card.getCustomerId());
+		}
+
+		// ✅ Hash CVV
 		card.setHashedCvv(hashCvv(card.getHashedCvv()));
+
 		return repository.save(card);
 	}
 
