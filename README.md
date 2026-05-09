@@ -183,6 +183,7 @@ spring.log
 ![Create Order and Payment](screenshots/OrderMS/postman-createorderandpayment.png)
 ![Status Paid](screenshots/OrderMS/postman-paidstatus.png)
 ![All Orders](screenshots/OrderMS/postman-allorders.png)
+![Get Order By Id](screenshots/OrderMS/postman-getorderbyid.png)
 
 
 
