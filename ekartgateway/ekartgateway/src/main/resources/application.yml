@@ -15,6 +15,16 @@ spring:
           routes:
 
             # =========================
+            # AUTH SERVICE
+            # =========================
+            - id: auth-service
+              uri: lb://AUTHMS
+              predicates:
+                - Path=/api/auth/**
+              filters:
+                - StripPrefix=2
+
+            # =========================
             # API ROUTES
             # =========================
 
@@ -55,43 +65,50 @@ spring:
 
 
             # =========================
-            # SWAGGER DOC ROUTES
+            # ✅ FINAL SWAGGER ROUTES (FIXED)
             # =========================
+
+            - id: auth-docs
+              uri: lb://AUTHMS
+              predicates:
+                - Path=/auth/v3/api-docs, /auth/v3/api-docs/**
+              filters:
+                - RewritePath=/auth/v3/api-docs(?<segment>/?.*), /v3/api-docs${segment}
 
             - id: customer-docs
               uri: lb://CUSTOMERMS
               predicates:
-                - Path=/customer/v3/api-docs
+                - Path=/customer/v3/api-docs, /customer/v3/api-docs/**
               filters:
-                - RewritePath=/customer/v3/api-docs, /v3/api-docs
+                - RewritePath=/customer/v3/api-docs(?<segment>/?.*), /v3/api-docs${segment}
 
             - id: product-docs
               uri: lb://PRODUCTMS
               predicates:
-                - Path=/product/v3/api-docs
+                - Path=/product/v3/api-docs, /product/v3/api-docs/**
               filters:
-                - RewritePath=/product/v3/api-docs, /v3/api-docs
+                - RewritePath=/product/v3/api-docs(?<segment>/?.*), /v3/api-docs${segment}
 
             - id: order-docs
               uri: lb://ORDERMS
               predicates:
-                - Path=/order/v3/api-docs
+                - Path=/order/v3/api-docs, /order/v3/api-docs/**
               filters:
-                - RewritePath=/order/v3/api-docs, /v3/api-docs
+                - RewritePath=/order/v3/api-docs(?<segment>/?.*), /v3/api-docs${segment}
 
             - id: payment-docs
               uri: lb://PAYMENTMS
               predicates:
-                - Path=/payment/v3/api-docs
+                - Path=/payment/v3/api-docs, /payment/v3/api-docs/**
               filters:
-                - RewritePath=/payment/v3/api-docs, /v3/api-docs
+                - RewritePath=/payment/v3/api-docs(?<segment>/?.*), /v3/api-docs${segment}
 
             - id: cart-docs
               uri: lb://CUSTOMERCARTMS
               predicates:
-                - Path=/cart/v3/api-docs
+                - Path=/cart/v3/api-docs, /cart/v3/api-docs/**
               filters:
-                - RewritePath=/cart/v3/api-docs, /v3/api-docs
+                - RewritePath=/cart/v3/api-docs(?<segment>/?.*), /v3/api-docs${segment}
 
 
 # =========================
@@ -106,11 +123,13 @@ eureka:
 
 
 # =========================
-# SWAGGER UI AGGREGATION
+# SWAGGER UI
 # =========================
 springdoc:
   swagger-ui:
     urls:
+      - name: AUTH SERVICE
+        url: /auth/v3/api-docs
       - name: CUSTOMER SERVICE
         url: /customer/v3/api-docs
       - name: PRODUCT SERVICE
