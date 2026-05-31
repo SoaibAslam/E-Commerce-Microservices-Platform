@@ -16,7 +16,7 @@ public class Product {
 	private Double price;
 
 	@Column(nullable = false)
-	private Integer quantity;
+	private String discription;
 
 	public Integer getProductId() {
 		return productId;
@@ -42,11 +42,11 @@ public class Product {
 		this.price = price;
 	}
 
-	public Integer getQuantity() {
-		return quantity;
+	public String getDiscription() {
+		return discription;
 	}
 
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
+	public void setDiscription(String discription) {
+		this.discription = discription;
 	}
 }
