@@ -44,7 +44,6 @@ public class CustomerServiceImpl implements CustomerService {
 		existingCustomer.setName(customer.getName());
 		existingCustomer.setEmail(customer.getEmail());
 		existingCustomer.setMobile(customer.getMobile());
-		existingCustomer.setPassword(customer.getPassword());
 		existingCustomer.setCustomerNo(customer.getCustomerNo());
 
 		return customerRepository.save(existingCustomer);
