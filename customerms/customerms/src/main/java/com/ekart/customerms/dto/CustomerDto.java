@@ -21,10 +21,6 @@ public class CustomerDto {
 	@Size(min = 2, max = 50, message = "Name must be between 2 and 50 characters")
 	private String name;
 
-	@NotBlank(message = "Password is required")
-	@Size(min = 6, message = "Password must have at least 6 characters")
-	private String password;
-
 	@NotBlank(message = "Mobile number is required")
 	@Pattern(regexp = "^[6-9][0-9]{9}$", message = "Mobile number must be a valid 10-digit Indian number")
 	private String mobile;
@@ -59,14 +55,6 @@ public class CustomerDto {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 	public String getMobile() {
