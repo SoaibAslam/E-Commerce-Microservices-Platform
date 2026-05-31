@@ -16,7 +16,7 @@ public class Product {
 	private Double price;
 
 	@Column(nullable = false)
-	private String discription;
+	private String description;
 
 	public Integer getProductId() {
 		return productId;
@@ -42,11 +42,11 @@ public class Product {
 		this.price = price;
 	}
 
-	public String getDiscription() {
-		return discription;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDiscription(String discription) {
-		this.discription = discription;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }

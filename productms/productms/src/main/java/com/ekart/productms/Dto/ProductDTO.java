@@ -15,8 +15,8 @@ public class ProductDTO {
 	@Positive(message = "Price must be greater than zero")
 	private Double price;
 
-	@NotBlank(message = "Discription name is required")
-	private String discription;
+	@NotBlank(message = "Description name is required")
+	private String description;
 
 	public Integer getProductId() {
 		return productId;
@@ -42,11 +42,11 @@ public class ProductDTO {
 		this.price = price;
 	}
 
-	public String getDiscription() {
-		return discription;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDiscription(String discription) {
-		this.discription = discription;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }
