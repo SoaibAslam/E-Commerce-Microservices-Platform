@@ -1,9 +1,9 @@
 package com.ekart.productms.service;
 
+import java.util.List;
+
 import com.ekart.productms.Dto.ProductDTO;
 import com.ekart.productms.entity.Product;
-
-import java.util.List;
 
 public interface ProductService {
 
@@ -15,8 +15,6 @@ public interface ProductService {
 
 	Product updateProduct(ProductDTO productDTO);
 
-	String reduceQuantity(Integer productId, Integer qty);
-	
 	void deleteProduct(Integer productId);
 
 	List<Product> saveAllProducts(List<ProductDTO> products);

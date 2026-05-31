@@ -40,9 +40,10 @@ public class ProductServiceImpl implements ProductService {
 		}
 
 		Product product = new Product();
+
 		product.setName(productDTO.getName());
 		product.setPrice(productDTO.getPrice());
-		product.setQuantity(productDTO.getQuantity());
+		product.setDescription(productDTO.getDescription());
 
 		return productRepository.save(product);
 	}
@@ -55,7 +56,7 @@ public class ProductServiceImpl implements ProductService {
 
 		existingProduct.setName(productDTO.getName());
 		existingProduct.setPrice(productDTO.getPrice());
-		existingProduct.setQuantity(productDTO.getQuantity());
+		existingProduct.setDescription(productDTO.getDescription());
 
 		try {
 			return productRepository.save(existingProduct);
@@ -65,30 +66,12 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public String reduceQuantity(Integer productId, Integer qty) {
-
-		Product product = productRepository.findById(productId)
-				.orElseThrow(() -> new NoSuchElementException("Product not found with id: " + productId));
-
-		if (qty <= 0) {
-			throw new IllegalArgumentException("Quantity must be greater than zero");
-		}
-
-		if (product.getQuantity() < qty) {
-			throw new IllegalArgumentException("Insufficient stock");
-		}
-
-		product.setQuantity(product.getQuantity() - qty);
-		productRepository.save(product);
-
-		return "Quantity reduced successfully";
-	}
-
-	@Override
 	public void deleteProduct(Integer productId) {
+
 		if (!productRepository.existsById(productId)) {
 			throw new NoSuchElementException("Product not found with id: " + productId);
 		}
+
 		productRepository.deleteById(productId);
 	}
 
@@ -97,9 +80,11 @@ public class ProductServiceImpl implements ProductService {
 
 		List<Product> productList = products.stream().map(dto -> {
 			Product product = new Product();
+
 			product.setName(dto.getName());
 			product.setPrice(dto.getPrice());
-			product.setQuantity(dto.getQuantity());
+			product.setDescription(dto.getDescription());
+
 			return product;
 		}).collect(Collectors.toList());
 

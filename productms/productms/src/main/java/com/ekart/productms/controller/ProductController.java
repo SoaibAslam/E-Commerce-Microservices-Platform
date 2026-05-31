@@ -39,9 +39,12 @@ public class ProductController {
 
 	@PostMapping
 	public ResponseEntity<?> createProduct(@Valid @RequestBody ProductDTO productDTO) {
+
 		try {
 			Product product = productService.createProduct(productDTO);
+
 			return ResponseEntity.status(HttpStatus.CREATED).body(product);
+
 		} catch (DataIntegrityViolationException ex) {
 			return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
 		}
@@ -49,29 +52,26 @@ public class ProductController {
 
 	@PutMapping
 	public ResponseEntity<?> updateProduct(@Valid @RequestBody ProductDTO productDTO) {
+
 		try {
 			return ResponseEntity.ok(productService.updateProduct(productDTO));
+
 		} catch (NoSuchElementException ex) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+
 		} catch (DataIntegrityViolationException ex) {
 			return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
 		}
 	}
 
-	@PutMapping("/{id}/reduce/{qty}")
-	public ResponseEntity<?> reduceQuantity(@PathVariable Integer id, @PathVariable Integer qty) {
-		try {
-			return ResponseEntity.ok(productService.reduceQuantity(id, qty));
-		} catch (IllegalArgumentException | NoSuchElementException ex) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
-		}
-	}
-
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> deleteProduct(@PathVariable Integer id) {
+
 		try {
 			productService.deleteProduct(id);
+
 			return ResponseEntity.ok("Product deleted successfully");
+
 		} catch (NoSuchElementException ex) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
 		}
@@ -79,8 +79,10 @@ public class ProductController {
 
 	@PostMapping("/bulk")
 	public ResponseEntity<?> saveAllProducts(@Valid @RequestBody List<ProductDTO> products) {
+
 		try {
 			return ResponseEntity.status(HttpStatus.CREATED).body(productService.saveAllProducts(products));
+
 		} catch (DataIntegrityViolationException ex) {
 			return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
 		}
