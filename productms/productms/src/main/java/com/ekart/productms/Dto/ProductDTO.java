@@ -1,6 +1,5 @@
 package com.ekart.productms.Dto;
 
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -16,9 +15,8 @@ public class ProductDTO {
 	@Positive(message = "Price must be greater than zero")
 	private Double price;
 
-	@NotNull(message = "Quantity is required")
-	@Min(value = 0, message = "Quantity cannot be negative")
-	private Integer quantity;
+	@NotBlank(message = "Discription name is required")
+	private String discription;
 
 	public Integer getProductId() {
 		return productId;
@@ -44,11 +42,11 @@ public class ProductDTO {
 		this.price = price;
 	}
 
-	public Integer getQuantity() {
-		return quantity;
+	public String getDiscription() {
+		return discription;
 	}
 
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
+	public void setDiscription(String discription) {
+		this.discription = discription;
 	}
 }
