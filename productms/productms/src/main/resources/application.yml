@@ -1,15 +1,18 @@
 server:
-  port: 8082   
+  port: 8082
 
 spring:
   application:
-    name: PRODUCTMS
+    name: productms
+
+  config:
+    import: "optional:configserver:"
 
   datasource:
     url: jdbc:mysql://localhost:3306/productdb
     username: root
-    password: Soaib@7672
-    driver-class-name: com.mysql.cj.jdbc.Driver   # ✅ FIXED (was driverClassName)
+    password: "Soaib@7672"
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
@@ -20,9 +23,10 @@ eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
+
     service-url:
       defaultZone: http://localhost:8761/eureka/
 
   instance:
-    prefer-ip-address: true        # ✅ IMPORTANT
-    instance-id: ${spring.application.name}:${random.value}   # ✅ ADDED
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.value}
