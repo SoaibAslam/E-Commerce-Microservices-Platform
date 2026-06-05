@@ -1,7 +1,8 @@
 🛒 Ekart E-Commerce Microservices Application
 
 📌 Project Overview
-Ekart is a backend e-commerce application built using Spring Boot microservices architecture. The system is divided into multiple independent services like Customer, Product, Cart, Order, and Payment, each handling a specific business function.
+Ekart is a backend e-commerce application built using Spring Boot microservices architecture. The system is divided into multiple independent services like Auth, Customer, Inventory, 
+Product, Cart, Order, and Payment, each handling a specific business function.
 The application demonstrates service-to-service communication, centralized routing, and scalable system design.
 ________________________________________
 🏗️ Architecture
@@ -12,15 +13,19 @@ ________________________________________
 •	Centralized routing using API Gateway 
 (Optional: You can add a diagram image later in GitHub)
 ________________________________________
-⚙️ Services Overview
-Service	Description
-Customer Service	Manages customer data (registration, login, profile)
-Product Service	        Handles product catalog and inventory
-Cart Service	        Manages cart items for customers
-Order Service	        Processes orders and maintains order status
-Payment Service	        Handles payment processing
-Eureka Server	        Service registry for discovery
-API Gateway	        Routes all client requests to appropriate services
+## ⚙️ Services Overview
+
+| Service                | Description
+-------------------------------------------
+| Auth Service           | Handles user authentication, authorization, JWT token generation, and security management
+| Customer Service       | Manages customer data (registration, login, profile management)
+| Inventory Service      | Manages product stock levels, inventory availability checks, stock addition, and stock reduction
+| Product Service        | Handles product catalog management and product information
+| Cart Service           | Manages cart items for customers
+| Order Service          | Processes orders and maintains order status
+| Payment Service        | Handles payment processing and transaction management
+| Eureka Server          | Service registry for service discovery
+| API Gateway            | Routes all client requests to appropriate microservices
 ________________________________________
 🔧 Tech Stack
 •	Java 
@@ -53,17 +58,22 @@ cd ekart-microservices
 2. Start services in order
 
 Run the services in this sequence:
-1.	Eureka Server 
-2.	API Gateway 
-3.	Customer Service 
-4.	Product Service 
-5.	Cart Service 
-6.	Order Service 
-7.	Payment Service 
+
+1. Eureka Server
+2. Auth Service
+3. Customer Service
+4. Inventory Service
+5. Product Service
+6. Cart Service
+7. Order Service
+8. Payment Service
+9. API Gateway
 ________________________________________
 3. Configure MySQL
 Create databases for each service (example):
+create database auth_db;
 create database customermsdb;
+create databases inventory_db;
 create database productdb;
 create database customercartdb;
 create database orderdb;
@@ -81,12 +91,14 @@ ________________________________________
 🔌 Service Ports
 Service	Port
 Eureka Server	       8761
-API Gateway	       8080
+Auth Service 	       8086
 Customer Service       8081
+Inventory Service      8087
 Product Service	       8082
 Cart Service	       8083
 Order Service	       8084
 Payment Service	       8085
+API Gateway	       8080
 ________________________________________
 🧪 Testing
 •	Tested APIs using Postman 
